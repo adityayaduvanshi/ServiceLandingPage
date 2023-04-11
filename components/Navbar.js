@@ -3,7 +3,6 @@ import logo from "../assets/assets/logo.png";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Navbar = () => {
   const isDesktop = useMediaQuery({ minWidth: 768 });
@@ -25,19 +24,13 @@ const Navbar = () => {
               <div>
                 <Link href="#">
                   <p className="text-white text-sm">
-                    Products{" "}
-                    <span>
-                      {" "}
-                      <KeyboardArrowDownIcon />
-                    </span>
+                    Products <span> </span>
                   </p>
                 </Link>
               </div>
               <div>
                 <Link href="#">
-                  <p className="text-white text-sm">
-                    Resources <KeyboardArrowDownIcon />
-                  </p>
+                  <p className="text-white text-sm">Resources</p>
                 </Link>
               </div>
             </div>

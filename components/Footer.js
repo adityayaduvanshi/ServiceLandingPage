@@ -49,7 +49,9 @@ const Footer = () => {
       <div className="mb-8 text-tertiaryText">
         <hr class="my-12  h-0.5 border-t-0 bg-secondaryText opacity-70" />
         <div className="lg:flex md:flex justify-between grid">
-          <p className="order-2">© 2077 Fake Company. All rights reserved.</p>
+          <p className="order-2 text-sm">
+            © 2077 Fake Company. All rights reserved.
+          </p>
           <div className="flex order-1 gap-4">
             <p className="cursor-pointer">Terms</p>
             <p className="cursor-pointer">Privacy</p>

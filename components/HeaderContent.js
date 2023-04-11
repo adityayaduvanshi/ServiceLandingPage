@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/legacy/image";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+
 import mainImage from "../assets/assets/hero-image.jpg";
 import company1 from "../assets/assets/company-logo-catalog.png";
 import company2 from "../assets/assets/company-logo-circooles.png";
 import company3 from "../assets/assets/company-logo-layer.png";
 import company4 from "../assets/assets/company-logo-quotient.png";
 import company5 from "../assets/assets/company-logo-sisyphus.png";
+import { PlayCircle } from "./SvgIcons";
 const HeaderContent = () => {
   return (
     <div className="mt-18">
@@ -25,8 +26,12 @@ const HeaderContent = () => {
       </div>
 
       <div className="lg:flex lg:gap-2 grid gap-2 my-12">
-        <button className="bg-whiteButton  rounded-lg py-[10px] px-3 text-headerBackground">
-          <PlayCircleOutlineIcon /> Showreel
+        <button className="bg-whiteButton  rounded-lg py-[10px] px-3 lg:gap-2 justify-center text-center flex text-headerBackground">
+          <span>
+            {" "}
+            <PlayCircle />
+          </span>{" "}
+          Showreel
         </button>
         <button className="bg-purpleButton rounded-lg py-[10px] px-3 text-white">
           Get in Touch
