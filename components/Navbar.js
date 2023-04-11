@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/assets/logo.png";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const isDesktop = useMediaQuery({ minWidth: 768 });
+  const [showMenu, setShowMenu] = useState(false);
+  const onCancel = () => {
+    setShowMenu(false);
+  };
   return (
     <div>
       <div className="lg:flex md:flex  mb-28 justify-between pt-2">
@@ -55,13 +60,21 @@ const Navbar = () => {
               <p className="text-white text-lg">Hourglass</p>
             </div>
             <div>
-              <svg fill="#ffffff" viewBox="0 0 448 512" width="30" title="bars">
-                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
-              </svg>
+              <button onClick={() => setShowMenu(true)}>
+                <svg
+                  fill="#ffffff"
+                  viewBox="0 0 448 512"
+                  width="30"
+                  title="bars"
+                >
+                  <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+                </svg>
+              </button>
             </div>
           </div>
         )}
       </div>
+      {showMenu && <MobileMenu onCancel={onCancel} />}
     </div>
   );
 };
